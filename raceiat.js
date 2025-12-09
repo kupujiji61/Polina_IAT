@@ -44,8 +44,9 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                 stimulusCss : { color:'#31940F','font-size':'2.3em' }
             },
 
-            // Атрибут 1: Горы (пока как слова)
-            attribute1 : {
+            // ───────── АТРИБУТЫ: ГОРЫ / БОЛОТА (КАРТИНКИ) ─────────
+
+            attribute1 : { // ГОРЫ
                 name : 'Горы',
                 title : {
                     media : { word : 'Горы' },
@@ -53,20 +54,21 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                     height: 4
                 },
                 stimulusMedia : [
-                    { word: 'гора 1' },
-                    { word: 'гора 2' },
-                    { word: 'гора 3' },
-                    { word: 'гора 4' },
-                    { word: 'гора 5' },
-                    { word: 'гора 6' },
-                    { word: 'гора 7' },
-                    { word: 'гора 8' }
+                    { image: 'mount_1.jpg' },
+                    { image: 'mount_2.jpg' },
+                    { image: 'mount_3.jpg' },
+                    { image: 'mount_4.jpg' },
+                    { image: 'mount_5.jpg' },
+                    { image: 'mount_6.jpg' },
+                    { image: 'mount_7.jpg' },
+                    { image: 'mount_8.jpg' }
                 ],
+                // CSS тут влияет в основном на размер рамки / подписи,
+                // сами картинки по размеру задаются их файлами.
                 stimulusCss : { color:'#0000FF','font-size':'2.3em' }
             },
 
-            // Атрибут 2: Болота (пока как слова)
-            attribute2 : {
+            attribute2 : { // БОЛОТА
                 name : 'Болота',
                 title : {
                     media : { word : 'Болота' },
@@ -74,17 +76,18 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                     height: 4
                 },
                 stimulusMedia : [
-                    { word: 'болото 1' },
-                    { word: 'болото 2' },
-                    { word: 'болото 3' },
-                    { word: 'болото 4' },
-                    { word: 'болото 5' },
-                    { word: 'болото 6' },
-                    { word: 'болото 7' },
-                    { word: 'болото 8' }
+                    { image: 'swamp_1.jpg' },
+                    { image: 'swamp_2.jpg' },
+                    { image: 'swamp_3.jpg' },
+                    { image: 'swamp_4.jpg' },
+                    { image: 'swamp_5.jpg' },
+                    { image: 'swamp_6.jpg' },
+                    { image: 'swamp_7.jpg' },
+                    { image: 'swamp_8.jpg' }
                 ],
                 stimulusCss : { color:'#0000FF','font-size':'2.3em' }
             },
+        
         base_url : {//Where are your images at?
             image : global.baseURL
         },

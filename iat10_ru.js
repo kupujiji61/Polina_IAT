@@ -12,6 +12,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 		var API = new APIConstructor();		
 		var scorer = new Scorer();
 		var piCurrent = API.getCurrent();
+		var global = API.getGlobal();
 
 		//Here we set the settings of our task. 
 		//Read the comments to learn what each parameters means.
@@ -376,8 +377,16 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				endTask: function(){
 					var DScoreObj = scorer.computeD();
 					piCurrent.feedback = DScoreObj.FBMsg;
-					piCurrent.d = DScoreObj.DScore; //YBYB: Added on 28March2017
-					API.save({block3Cond:block3Cond, feedback:DScoreObj.FBMsg, d: DScoreObj.DScore});
+					piCurrent.d = DScoreObj.DScore;
+					
+					global.raceiat = {
+						d: DScoreObj.DScore,
+						feedback: DScoreObj.FBMsg
+					};
+					API.save({
+						block3Cond: block3Cond,
+						feedback: DScoreObj.FBMsg,
+						d: DScoreObj.DScore});
 				}
 			});
 		/**

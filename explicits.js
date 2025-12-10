@@ -71,7 +71,7 @@ define(['questAPI'], function(Quest){
             {text:'Я значительно предпочитаю <%= global.whiteLabels %> по сравнению <%= global.blackLabels %>.',value:7},
             {text:'Я в умеренной степени предпочитаю <%= global.whiteLabels %> по сравнению <%= global.blackLabels %>.',value:6},
             {text:'Я слегка предпочитаю <%= global.whiteLabels %> по сравнению <%= global.blackLabels %>.',value:5},
-            {text:'Я в равной степени отношусь к <%= global.whiteLabels %> and <%= global.blackLabels %> equally.',value:4},
+            {text:'Я в равной степени отношусь к <%= global.whiteLabels %> и <%= global.blackLabels %>.',value:4},
             {text:'Я слегка предпочитаю <%= global.blackLabels %> по сравнению <%= global.whiteLabels %>.',value:3},
             {text:'Я в умеренной степени предпочитаю <%= global.blackLabels %> по сравнению <%= global.whiteLabels %>.',value:2},
             {text:'Я значительно предпочитаю <%= global.blackLabels %> по сравнению <%= global.whiteLabels %>.',value:1}

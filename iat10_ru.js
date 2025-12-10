@@ -192,13 +192,13 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 					'</p>',
 					'<p align="left" style="margin-left:5px">',
 						'<br/>',
-						'Поставьте левый палец на <b>левую</b> зеленую часть для слов / картинок, которые принадлежат к категории<font color="#0000ff">leftAttribute</font>.<br/>',
-						'Поставьте правый палец на <b>right</b> зеленую часть для слов / картинок, которые принадлежат к категории <font color="#0000ff">rightAttribute</font>.<br/>',
+						'Поставьте левый палец над <b>левой</b> зеленой частью для слов / картинок, которые принадлежат к категории<font color="#0000ff">leftAttribute</font>.<br/>',
+						'Поставьте правый палец над <b>правой</b> зеленой частью для слов / картинок, которые принадлежат к категории <font color="#0000ff">rightAttribute</font>.<br/>',
 						'Слова / картинки будут появляться по одной за раз.<br/>',
 						'<br/>',
 						'Если вы ошибетесь, на экране появится <font color="#ff0000"><b>X</b></font> красного цвета. Нажмите на другую часть экрана. <u>Отвечайте как можно быстрее</u>, соблюдая правильность ответов.',
 					'</p>',
-					'<p align="center">Нажмите на <b>Нижнюю </b> зеленую часть, как будете готовы начать.</p>',
+					'<p align="center">Нажмите на <b>нижнюю </b> зеленую часть, как будете готовы начать.</p>',
 				'</div>'
 			].join('\n'),
 
@@ -215,94 +215,94 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instCategoriesPracticeTouch: [
 				'<div>',
 					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
+						'<u>Часть blockNum из nBlocks</u>',
 					'</p>',
 					'<p align="left" style="margin-left:5px">',
 						'<br/>',
-						'Put a left finger over the <b>left</b> green area for items that belong to the category <font color="#336600">leftCategory</font>.<br/>',
-						'Put a right finger over the <b>right</b> green area for items that belong to the category <font color="#336600">rightCategory</font>.<br/>',
-						'Items will appear one at a time.<br/>',
+						'Поставьте левый палец над <b>левой</b> зеленой частью для слов / картинок, которые принадлежат к категории <font color="#336600">leftCategory</font>.<br/>',
+						'Поставьте правый палец над <b>правой</b> зеленой частью для слов / картинок, которые принадлежат к категории <font color="#336600">rightCategory</font>.<br/>',
+						'Слова / картинки будут появляться по одной за раз.<br/>',
 						'<br/>',
-						'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.',
+						'Если вы ошибетесь, на экране появится <font color="#ff0000"><b>X</b></font> красного цвета. Нажмите на другую часть экрана. <u>Отвечайте как можно быстрее</u>, соблюдая правильность ответов.',
 					'</p>',
-					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
+					'<p align="center">Нажмите на <b>нижнюю </b> зеленую часть, как будете готовы начать.</p>',
 				'</div>'
 			].join('\n'),
 
 			instFirstCombined : '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
+				'<font color="#000000"><u>Часть blockNum из nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Use the <b>E</b> key for <font color="#336600">leftCategory</font> and for <font color="#0000ff">leftAttribute</font>.<br/>' +
-				'Use the <b>I</b> key for <font color="#336600">rightCategory</font> and for  <font color="#0000ff">rightAttribute</font>.<br/>' +
-				'Each item belongs to only one category.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' + 
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+				'Используйте клавишу <b>E</b> для <font color="#336600">leftCategory</font> и для <font color="#0000ff">leftAttribute</font>.<br/>' +
+				'Используйте клавишу <b>I</b> для <font color="#336600">rightCategory</font> и для  <font color="#0000ff">rightAttribute</font>.<br/>' +
+				'Каждое слово / картинка относится только к одной категории.<br/><br/>' +
+				'Если вы ошибетесь, на экране появится <font color="#ff0000"><b>X</b></font> красного цвета. ' +
+				'Нажмите другую кнопку для продолжения.<br/>' + 
+				'<u>Отвечайте как можно быстрее</u>, соблюдая правильность ответов.<br/><br/></p>' +
+				'<p align="center">Нажмите на <b>пробел</b>, как будете готовы начать.</font></p></div>',
 			instFirstCombinedTouch:[
 				'<div>',
 					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
+						'<u>Часть blockNum из nBlocks</u>',
 					'</p>',
 					'<br/>',
 					'<br/>',
 					'<p align="left" style="margin-left:5px">',
-						'Put a left finger over the <b>left</b> green area for <font color="#336600">leftCategory</font> items and for <font color="#0000ff">leftAttribute</font>.</br>',
-						'Put a right finger over the <b>right</b> green area for <font color="#336600">rightCategory</font> items and for <font color="#0000ff">rightAttribute</font>.</br>',
-							'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.</br>',
+						'Поставьте левый палец над <b>левой</b> зеленой частью для <font color="#336600">leftCategory</font> и для <font color="#0000ff">leftAttribute</font>.</br>',
+						'Поставьте правый палец над <b>правой</b> зеленой частью для <font color="#336600">rightCategory</font> и для <font color="#0000ff">rightAttribute</font>.</br>',
+							'Если вы ошибетесь, на экране появится <font color="#ff0000"><b>X</b></font> красного цвета. Нажмите на другую часть экрана. <u>Отвечайте как можно быстрее</u>, соблюдая правильность ответов.</br>',
 						'</p>',
-						'<p align="center">Touch the <b>lower </b> green area to start.</p>',
+						'<p align="center">Нажмите на <b>нижнюю </b> зеленую часть, как будете готовы начать.</p>',
 				'</div>'
 			].join('\n'),
 
 			instSecondCombined : '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
+				'<font color="#000000"><u>Часть blockNum из nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'This is the same as the previous part.<br/>' +
-				'Use the <b>E</b> key for <font color="#336600">leftCategory</font> and for <font color="#0000ff">leftAttribute</font>.<br/>' +
-				'Use the <b>I</b> key for <font color="#336600">rightCategory</font> and for  <font color="#0000ff">rightAttribute</font>.<br/>' +
-				'Each item belongs to only one category.<br/><br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+				'Эта часть точно такая же, как и предыдущая.<br/>' +
+				'Используйте клавишу <b>E</b> для <font color="#336600">leftCategory</font> и для <font color="#0000ff">leftAttribute</font>.<br/>' +
+				'Используйте клавишу <b>I</b> для <font color="#336600">rightCategory</font> и для  <font color="#0000ff">rightAttribute</font>.<br/>' +
+				'Каждое слово / картинка относится только к одной категории.<br/><br/>' +
+				'<u>Отвечайте как можно быстрее</u>, соблюдая правильность ответов.<br/><br/></p>' +
+				'<p align="center">Нажмите на <b>пробел</b>, как будете готовы начать.</font></p></div>',
 			instSecondCombinedTouch:[
 				'<div>',
-					'<p align="center"><u>Part blockNum of nBlocks</u></p>',
+					'<p align="center"><u>Часть blockNum из nBlocks</u></p>',
 					'<br/>',
 					'<br/>',
 
 					'<p align="left" style="margin-left:5px">',
-						'Put a left finger over the <b>left</b> green area for <font color="#336600">leftCategory</font> items and for <font color="#0000ff">leftAttribute</font>.<br/>',
-						'Put a right finger over the <b>right</b> green area for <font color="#336600">rightCategory</font> items and for <font color="#0000ff">rightAttribute</font>.<br/>',
+						'Поставьте левый палец над <b>left</b> зеленой частью для <font color="#336600">leftCategory</font> и для <font color="#0000ff">leftAttribute</font>.<br/>',
+						'Поставьте правый палец над <b>right</b> зеленой частью для <font color="#336600">rightCategory</font> и для <font color="#0000ff">rightAttribute</font>.<br/>',
 						'<br/>',
-						'<u>Go as fast as you can</u> while being accurate.<br/>',
+						'<u>Отвечайте как можно быстрее</u>, соблюдая правильность ответов.<br/>',
 					'</p>',
-					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
+					'<p align="center">Нажмите на <b>нижнюю </b> зеленую часть, как будете готовы начать.</p>',
 				'</div>'
 			].join('\n'),
 
 			instSwitchCategories : '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
+				'<font color="#000000"><u>Часть blockNum из nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'<b>Watch out, the labels have changed position!</b><br/>' +
-				'Use the left finger on the <b>E</b> key for <font color="#336600">leftCategory</font>.<br/>' +
-				'Use the right finger on the <b>I</b> key for <font color="#336600">rightCategory</font>.<br/><br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+				'<b>Обратите внимание, положение категорий изменилось!</b><br/>' +
+				'Поставьте левый палец на клавишу <b>E</b> для <font color="#336600">leftCategory</font>.<br/>' +
+				'Поставьте правый палец на клавишу <b>I</b> для <font color="#336600">rightCategory</font>.<br/><br/>' +
+				'<u>Отвечайте как можно быстрее</u>, соблюдая правильность ответов.<br/><br/></p>' +
+				'<p align="center">Нажмите на <b>пробел bar</b>, как будете готовы начать.</font></p></div>',
 			instSwitchCategoriesTouch: [
 				'<div>',
 					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
+						'<u>Часть blockNum из nBlocks</u>',
 					'</p>',
 					'<p align="left" style="margin-left:5px">',
 						'<br/>',
-						'Watch out, the labels have changed position!<br/>',
-							'Put a left finger over the <b>left</b> green area for <font color="#336600">leftCategory</font> items.<br/>',
-							'Put a right finger over the <b>right</b> green area for <font color="#336600">rightCategory</font> items.<br/>',
-							'Items will appear one at a time.',
+						'Обратите внимание, положение категорий изменилось!<br/>',
+							'Поставьте левый палец над <b>левой</b> зеленой частью для <font color="#336600">leftCategory</font>.<br/>',
+							'Поставьте правый палец над <b>правой</b> зеленой частью дляr <font color="#336600">rightCategory</font>.<br/>',
+							'Слова / картинки будут появляться по одной за раз.',
 							'<br/>',
-							'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.<br/>',
+							'Если вы ошибетесь, на экране появится <font color="#ff0000"><b>X</b></font> красного цвета.  Нажмите на другую часть экрана. <u>Отвечайте как можно быстрее</u>, соблюдая правильность ответов.<br/>',
 						'</p>',
-						'<p align="center">Touch the <b>lower </b> green area to start.</p>',
+						'<p align="center">Нажмите на <b>нижнюю </b> зеленую часть, как будете готовы начать.</p>',
 				'</div>'
 			].join('\n'),
 

@@ -24,9 +24,9 @@ define(['pipAPI','./iat10_ru.js'], function(APIConstructor, iatExtension){
 
             // Таргет 2: Русский
             category2 : {
-                name : 'Русский',
+                name : 'Плохое',
                 title : {
-                    media : { word : 'Русский' },
+                    media : { word : 'Плохое' },
                     css   : { color:'#31940F','font-size':'1.8em' },
                     height: 4
                 },

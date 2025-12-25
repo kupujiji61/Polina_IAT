@@ -20,11 +20,11 @@ define(['managerAPI',
     let whiteLabels = [];
 
     if (raceSet == 'a') {
-        blackLabels.push('башкирам');
-        whiteLabels.push('русским');
+        blackLabels.push('Полине');
+        whiteLabels.push('не-Полине');
     } else {
-        blackLabels.push('башкирам');
-        whiteLabels.push('русским');
+        blackLabels.push('Полине');
+        whiteLabels.push('не-Полине');
     }
 
     API.addGlobal({
@@ -37,12 +37,12 @@ define(['managerAPI',
         //Select randomly what attribute words to see. 
         //Based on Axt, Feng, & Bar-Anan (2021).
         baWords : API.shuffle([
-            'Башкортостан', 'Сабантуй', 'Бешбармак', 'Урал-Батыр',
-            'Уфа', 'Агидель', 'Бешмет', 'Курай'
+            'Добро', 'Забота', 'Радость', 'Счастье',
+            'Умиротворение', 'Благо', 'Любовь'
         ]),
         ruWords : API.shuffle([
-            'Россия', 'Масленица', 'Пельмени', 'Илья Муромец', 
-            'Москва', 'Енисей', 'Кокошник', 'Балалайка'
+            'Зло', 'Безразличие', 'Грусть', 'Тоска', 
+            'Беспокойство', 'Грех', 'Ненависть'
         ])
     });
 

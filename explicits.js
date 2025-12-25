@@ -6,51 +6,97 @@ define(['questAPI'], function(Quest){
 	* Page prototype
 	*/
     API.addPagesSet('basicPage',{
-        noSubmit:false, //Change to true if you don't want to show the submit button.
+        noSubmit:false, // показываем кнопку "Далее"
         header: 'Вопросник',
-        decline: true,
+        decline: false,
         declineText: isTouch ? 'Decline' : 'Отказ от ответа', 
         autoFocus:true, 
-        progressBar:  'Страница <%= pagesMeta.number %> из 3'
+        progressBar:  'Страница <%= pagesMeta.number %> из 6',
+		submitText: 'Далее'
     });
 	
     /**
 	* Question prototypes
 	*/
-    API.addQuestionsSet('basicQ',{
-        decline: 'true',
-        required : true, 		
-        errorMsg: {
-            required: isTouch 
-                ? 'Выберите подходящий вариант ответа, или нажмите \'Decline\'' 
-                : 'Выберите подходящий вариант ответа, или нажмите \'Decline to Answer\''
-        },
-        autoSubmit:'true',
-        numericValues:'true',
-        help: '<%= pagesMeta.number < 3 %>',
-        helpText: 'Для быстрого ответа нажмите на подходящий вариант дважды.'
+	API.addQuestionsSet('basicQ',{
+		decline: 'false',
+		required : true,
+		errorMsg: {
+			required: isTouch
+				? "Выберите подходящий вариант ответа"
+				: "Выберите подходящий вариант ответа"
+		},
+		autoSubmit: 'true',
+		numericValues: 'true',
+		help: false,
+		helpText: ''
+	});
+	
+	API.addQuestionsSet('basicSelect',{
+		inherit: 'basicQ',
+		type: 'selectOne'
+	});
+	
+    // Базовый прототип для открытых вопросов
+    API.addQuestionsSet('basicOpen',{
+        inherit: 'basicQ',
+        type: 'text',
+        autoSubmit:false,
+        numericValues:false
     });
 
-    API.addQuestionsSet('basicSelect',{
-        inherit :'basicQ',
-        type: 'selectOne'
+    /************* КОНКРЕТНЫЕ ВОПРОСЫ *************/
+
+    // 1. Пол
+    API.addQuestionsSet('gender',{
+        inherit : 'basicSelect',
+        name: 'gender',
+        stem: 'Ваш пол:',
+        answers: [
+            {text:'Мужской', value:1},
+            {text:'Женский', value:2}
+        ]
     });
-	
-    API.addQuestionsSet('basicDropdown',{
-        inherit :'basicQ',
-        type : 'dropdown',
-        autoSubmit:false
+
+    // 2. Возраст
+    API.addQuestionsSet('age',{
+        inherit : 'basicOpen',
+        name: 'age',
+        stem: 'Укажите, пожалуйста, Ваш возраст (полных лет):'
     });
-	
+
+    // 3. Год знакомства с Полиной
+    API.addQuestionsSet('yearMetPolina',{
+        inherit : 'basicOpen',
+        name: 'year_met_polina',
+        stem: 'В каком году Вы познакомились с Полиной? Пожалуйста, укажите только год (например, 2019).'
+    });
+
+    // 4. Тип отношений с Полиной
+    API.addQuestionsSet('relationPolina',{
+        inherit : 'basicSelect',
+        name: 'relation_polina',
+        stem: 'Выберите одно слово, которое лучше всего описывает Ваши отношения с Полиной:',
+        answers: [
+            {text:'Родственники', value:1},
+            {text:'Друзья', value:2},
+            {text:'Приятели', value:3},
+            {text:'Знакомые', value:4},
+            {text:'Коллеги / одногруппники', value:5},
+            {text:'Братья и сёстры по вере', value:6}
+        ]
+    });
+
+    // Прототип «термометра» (оценка тепла/холода чувств)
     API.addQuestionsSet('therm',{
-        inherit: 'basicSelect',
+        inherit : 'basicSelect',
         answers: [
             {text:'10 - Чрезвычайно тёплое', value:10},
-            {text:'9 - Очень теплое', value:9},
-            {text:'8 - Умеренно теплое', value:8},
-            {text:'7 - Скорее теплое', value:7},
-            {text:'6 - Слегка теплое', value:6},
-            {text:'5 - Ни теплое, ни холодное', value:5},
+            {text:'9 - Очень тёплое', value:9},
+            {text:'8 - Умеренно тёплое', value:8},
+            {text:'7 - Скорее тёплое', value:7},
+            {text:'6 - Слегка тёплое', value:6},
+            {text:'5 - Ни тёплое, ни холодное', value:5},
             {text:'4 - Слегка холодное', value:4},
             {text:'3 - Скорее холодное', value:3},
             {text:'2 - Умеренно холодное', value:2},
@@ -59,60 +105,46 @@ define(['questAPI'], function(Quest){
         ]
     });
 
-	
-    /**
-	*Specific questions
-	*/	
-    API.addQuestionsSet('attributes7',{
-        inherit : 'basicSelect',
-        name: 'attributes7',
-        stem: 'Какое утверждение лучше всего описывает Вас?',
-        answers: [
-            {text:'Я значительно предпочитаю <%= global.whiteLabels %> по сравнению <%= global.blackLabels %>.',value:7},
-            {text:'Я в умеренной степени предпочитаю <%= global.whiteLabels %> по сравнению <%= global.blackLabels %>.',value:6},
-            {text:'Я слегка предпочитаю <%= global.whiteLabels %> по сравнению <%= global.blackLabels %>.',value:5},
-            {text:'Я в равной степени отношусь к <%= global.whiteLabels %> и <%= global.blackLabels %>.',value:4},
-            {text:'Я слегка предпочитаю <%= global.blackLabels %> по сравнению <%= global.whiteLabels %>.',value:3},
-            {text:'Я в умеренной степени предпочитаю <%= global.blackLabels %> по сравнению <%= global.whiteLabels %>.',value:2},
-            {text:'Я значительно предпочитаю <%= global.blackLabels %> по сравнению <%= global.whiteLabels %>.',value:1}
-        ]
-    });
-	
-    API.addQuestionsSet('thermBash',{
+    // 5. Теплота чувств к Полине
+    API.addQuestionsSet('thermPolina',{
         inherit : 'therm',
-        name: 'Tblack_0to10',
-        stem: 'Насколько теплые или холодные чувства Вы испытываете по отношению к <b><%= global.blackLabels %></b>?'
+        name: 'therm_polina',
+        stem: 'Насколько холодные или тёплые чувства Вы испытываете по отношению к Полине?'
     });
 
-    API.addQuestionsSet('thermRuss',{
+    // 6. Теплота чувств к людям в целом
+    API.addQuestionsSet('thermPeople',{
         inherit : 'therm',
-        name: 'Twhite_0to10',
-        stem: 'Насколько теплые или холодные чувства Вы испытываете по отношению к <b><%= global.whiteLabels %></b>?'
+        name: 'therm_people',
+        stem: 'Насколько тёплые или холодные чувства Вы испытываете по отношению к людям в целом?'
     });
+
+    /************* ПОСЛЕДОВАТЕЛЬНОСТЬ СТРАНИЦ *************/
 
     API.addSequence([
-        {
-            mixer : 'random', 
-            data : [
-                {
-                    mixer : 'random', 
-                    wrapper:true, 
-                    data : [
-                        {
-                            inherit:'basicPage', 
-                            questions: {inherit:'thermBash'}
-                        },
-                        {
-                            inherit:'basicPage', 
-                            questions: {inherit:'thermRuss'}							
-                        }
-                    ]
-                },
-                {
-                    inherit:'basicPage', 
-                    questions: {inherit:'attributes7'}
-                }
-            ]
+        { // 1. Пол
+            inherit:'basicPage',
+            questions: {inherit:'gender'}
+        },
+        { // 2. Возраст
+            inherit:'basicPage',
+            questions: {inherit:'age'}
+        },
+        { // 3. Год знакомства
+            inherit:'basicPage',
+            questions: {inherit:'yearMetPolina'}
+        },
+        { // 4. Тип отношений
+            inherit:'basicPage',
+            questions: {inherit:'relationPolina'}
+        },
+        { // 5. Теплота чувств к Полине
+            inherit:'basicPage',
+            questions: {inherit:'thermPolina'}
+        },
+        { // 6. Теплота чувств к людям в целом
+            inherit:'basicPage',
+            questions: {inherit:'thermPeople'}
         }
     ]);
 

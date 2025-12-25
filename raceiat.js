@@ -4,21 +4,20 @@ define(['pipAPI','./iat10_ru.js'], function(APIConstructor, iatExtension){
 
     return iatExtension({
         category1 : {
-                name : 'Башкирский',
+                name : 'Хорошее',
                 title : {
-                    media : { word : 'Башкирский' },
+                    media : { word : 'Хорошее' },
                     css   : { color:'#31940F','font-size':'1.8em' },
                     height: 4
                 },
                 stimulusMedia : [
-                    { word: 'Башкортостан' },
-                    { word: 'Сабантуй' },
-                    { word: 'Бешбармак' },
-                    { word: 'Урал-Батыр' },
-                    { word: 'Уфа' },
-                    { word: 'Агидель' },
-                    { word: 'Бешмет' },
-                    { word: 'Курай' }
+                    { word: 'Добро' },
+                    { word: 'Забота' },
+                    { word: 'Радость' },
+                    { word: 'Счастье' },
+                    { word: 'Умиротворение' },
+                    { word: 'Благо' },
+                    { word: 'Любовь' }
                 ],
                 stimulusCss : { color:'#31940F','font-size':'2.3em' }
             },
@@ -32,14 +31,13 @@ define(['pipAPI','./iat10_ru.js'], function(APIConstructor, iatExtension){
                     height: 4
                 },
                 stimulusMedia : [
-                    { word: 'Россия' },
-                    { word: 'Масленица' },
-                    { word: 'Пельмени' },
-                    { word: 'Илья Муромец' },
-                    { word: 'Москва' },
-                    { word: 'Енисей' },
-                    { word: 'Кокошник' },
-                    { word: 'Балалайка' }
+                    { word: 'Зло' },
+                    { word: 'Безразличие' },
+                    { word: 'Грусть' },
+                    { word: 'Тоска' },
+                    { word: 'Беспокойство' },
+                    { word: 'Грех' },
+                    { word: 'Ненависть' }
                 ],
                 stimulusCss : { color:'#31940F','font-size':'2.3em' }
             },
@@ -47,21 +45,19 @@ define(['pipAPI','./iat10_ru.js'], function(APIConstructor, iatExtension){
             // ───────── АТРИБУТЫ: ГОРЫ / БОЛОТА (КАРТИНКИ) ─────────
 
             attribute1 : { // ГОРЫ
-                name : 'Горы',
+                name : 'Полина',
                 title : {
-                    media : { word : 'Горы' },
+                    media : { word : 'Полина' },
                     css   : { color:'#0000FF','font-size':'1.8em' },
                     height: 4
                 },
                 stimulusMedia : [
-                    { image: 'mount_1.jpg' },
-                    { image: 'mount_2.jpg' },
-                    { image: 'mount_3.jpg' },
-                    { image: 'mount_4.jpg' },
-                    { image: 'mount_5.jpg' },
-                    { image: 'mount_6.jpg' },
-                    { image: 'mount_7.jpg' },
-                    { image: 'mount_8.jpg' }
+                    { image: 'pf1_nc.jpg' },
+                    { image: 'pf2_nc.jpg' },
+                    { image: 'pf3_nc.jpg' },
+                    { image: 'pf4_nc.jpg' },
+                    { image: 'pf5_nc.jpg' },
+                    { image: 'pf6_nc.jpg' }
                 ],
                 // CSS тут влияет в основном на размер рамки / подписи,
                 // сами картинки по размеру задаются их файлами.
@@ -69,21 +65,19 @@ define(['pipAPI','./iat10_ru.js'], function(APIConstructor, iatExtension){
             },
 
             attribute2 : { // БОЛОТА
-                name : 'Болота',
+                name : 'Не-Полина',
                 title : {
-                    media : { word : 'Болота' },
+                    media : { word : 'Не-Полина' },
                     css   : { color:'#0000FF','font-size':'1.8em' },
                     height: 4
                 },
                 stimulusMedia : [
-                    { image: 'swamp_1.jpg' },
-                    { image: 'swamp_2.jpg' },
-                    { image: 'swamp_3.jpg' },
-                    { image: 'swamp_4.jpg' },
-                    { image: 'swamp_5.jpg' },
-                    { image: 'swamp_6.jpg' },
-                    { image: 'swamp_7.jpg' },
-                    { image: 'swamp_8.jpg' }
+                    { image: 'wf_1.jpg' },
+                    { image: 'wf_2.jpg' },
+                    { image: 'wf_3.jpg' },
+                    { image: 'wf_4.jpg' },
+                    { image: 'wf_5.jpg' },
+                    { image: 'wf_6.jpg' }
                 ],
                 stimulusCss : { color:'#0000FF','font-size':'2.3em' }
             },

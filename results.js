@@ -22,7 +22,6 @@ define(['questAPI'], function (Quest) {
         stem: [
             // --- БЛОК JS: достаём глобальные данные и считаем числа ---
             '<% ',
-            '  var r    = (global && global.raceiat) ? global.raceiat : {};',      // весь объект
             '  var dRaw = (typeof r.d !== "undefined") ? r.d : null;',             // то, что туда записали
             '  var dNum = Number(dRaw);',                                          // пытаемся привести к числу
             '  var fb   = r.feedback || "";',                                      // текст интерпретации

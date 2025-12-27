@@ -18,48 +18,49 @@ define(['questAPI'], function (Quest) {
         autoSubmit: false,
         decline: false,
 
-        // Здесь мы руками собираем HTML-строку
         stem: function () {
-            // 1. Достаем глобальные данные из IAT
+            // 1. Достаём глобальные данные, которые мы записали в iat10_ru.js
             let g = API.getGlobal() || {};
             let r = g.raceiat || {};
 
-            // D-score как число
+            // Пробуем привести D-score к числу
             let dNum = Number(r.d);
             let fb   = r.feedback || '';
 
-            // Строка, которую будем возвращать
-            let html = '';
+            let hasNumeric = !isNaN(dNum);
+            let dDisplay   = hasNumeric ? dNum.toFixed(2) : '—';
+            let absD       = hasNumeric ? Math.abs(dNum) : NaN;
 
-            // 2. Если D-score не удалось посчитать
-            if (isNaN(dNum)) {
-                html += '<p class="lead"><b>К сожалению, результат теста не удалось рассчитать.</b></p>';
-                html += '<p>Это могло произойти из-за большого количества ошибок или технического сбоя.</p>';
-                html += '<p>Вы всё равно можете нажать «Далее», чтобы завершить исследование.</p>';
-                return html;
+            // 2. Определяем силу эффекта
+            let magnitude;
+            if (!hasNumeric) {
+                magnitude = 'нельзя надёжно определить (результат не был корректно рассчитан)';
+            } else if (absD < 0.15) {
+                magnitude = 'почти нет эффекта';
+            } else if (absD < 0.35) {
+                magnitude = 'слабый эффект';
+            } else if (absD < 0.65) {
+                magnitude = 'умеренный эффект';
+            } else {
+                magnitude = 'сильный эффект';
             }
 
-            // 3. Считаем силу эффекта по |D|
-            let absD = Math.abs(dNum);
-            let magnitude = '';
+            // 3. Собираем HTML-текст
+            let html = '';
 
-            if (absD < 0.15)       magnitude = 'почти нет эффекта';
-            else if (absD < 0.35)  magnitude = 'слабый эффект';
-            else if (absD < 0.65)  magnitude = 'умеренный эффект';
-            else                   magnitude = 'сильный эффект';
-
-            // 4. Блок «Ваш результат»
             html += '<p class="lead"><b>Ваш результат по тесту скрытых ассоциаций</b></p>';
-            html += '<p><b>D-score:</b> ' + dNum.toFixed(2) + '</p>';
+            html += '<p><b>D-score:</b> ' + dDisplay + '</p>';
             html += '<p><b>Сила эффекта:</b> ' + magnitude + '</p>';
 
             if (fb) {
                 html += '<p>' + fb + '</p>';
+            } else {
+                html += '<p>Интерпретация результата отсутствует или не была рассчитана.</p>';
             }
 
             html += '<hr>';
 
-            // 5. Объяснение сути IAT
+            // 4. Объяснение сути IAT
             html += '<p><b>Что измеряет этот тест?</b></p>';
             html += '<p>Тест имплицитных ассоциаций (Implicit Association Test, IAT) измеряет скорость, с которой человек ' +
                     'соотносит разные категории (например, Полину и «хорошее») со словами и картинками.</p>';
@@ -73,7 +74,7 @@ define(['questAPI'], function (Quest) {
             html += '<p>Чем больше по модулю значение D-score, тем сильнее выражена ассоциация. Значения, близкие к 0, ' +
                     'говорят о том, что заметного перекоса в скорости реакций между сравниваемыми парами нет.</p>';
 
-            // 6. Табличка интерпретации по модулю D
+            // 5. Шкала интерпретации по модулю D
             html += '<p><b>Как интерпретировать величину D-score?</b></p>';
             html += '<ul>';
             html += '<li>|D| &lt; 0.15 — почти нет эффекта</li>';

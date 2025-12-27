@@ -72,12 +72,12 @@ define(['pipAPI','./iat10_ru.js'], function(APIConstructor, iatExtension){
                     height: 4
                 },
                 stimulusMedia : [
-                    { image: 'wf_1.jpg' },
-                    { image: 'wf_2.jpg' },
-                    { image: 'wf_3.jpg' },
-                    { image: 'wf_4.jpg' },
-                    { image: 'wf_5.jpg' },
-                    { image: 'wf_6.jpg' }
+                    { image: 'wf1_nc.jpg' },
+                    { image: 'wf2_nc.jpg' },
+                    { image: 'wf3_nc.jpg' },
+                    { image: 'wf4_nc.jpg' },
+                    { image: 'wf5_nc.jpg' },
+                    { image: 'wf6_nc.jpg' }
                 ],
                 stimulusCss : { color:'#0000FF','font-size':'2.3em' }
             },

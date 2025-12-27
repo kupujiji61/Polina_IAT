@@ -373,22 +373,25 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 		*/
 		API.addSettings('canvas',piCurrent.canvas);
 		API.addSettings('base_url',piCurrent.base_url);
-		API.addSettings('hooks',{
-				endTask: function(){
-					var DScoreObj = scorer.computeD();
-					piCurrent.feedback = DScoreObj.FBMsg;
-					piCurrent.d = DScoreObj.DScore;
-					
-					global.raceiat = {
-						d: DScoreObj.DScore,
-						feedback: DScoreObj.FBMsg
-					};
-					API.save({
-						block3Cond: block3Cond,
-						feedback: DScoreObj.FBMsg,
-						d: DScoreObj.DScore});
-				}
-			});
+		API.addSettings('hooks', {
+			endTask: function () {
+				var DScoreObj = scorer.computeD();
+				piCurrent.feedback = DScoreObj.FBMsg;
+				piCurrent.d = DScoreObj.DScore;
+				var global = API.getGlobal();
+				global.raceiat = global.raceiat || {}; // если ещё не создан – создаём
+				global.raceiat.d        = DScoreObj.DScore;        // само значение D
+				global.raceiat.d_str    = (typeof DScoreObj.DScore === 'number')
+					? DScoreObj.DScore.toFixed(2)
+					: '';
+				global.raceiat.feedback = DScoreObj.FBMsg;         // текстовая интерпретация
+
+				API.save({
+					block3Cond: block3Cond,
+					feedback:   DScoreObj.FBMsg,
+					d:          DScoreObj.DScore});
+			}
+		});
 		/**
 		 * Create default sorting trial
 		 */

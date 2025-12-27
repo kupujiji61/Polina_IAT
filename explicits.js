@@ -83,7 +83,8 @@ define(['questAPI'], function(Quest){
             {text:'Приятели', value:3},
             {text:'Знакомые', value:4},
             {text:'Коллеги / одногруппники', value:5},
-            {text:'Братья и сёстры по вере', value:6}
+            {text:'Братья и сёстры по вере', value:6},
+			{text:'Кнопка для Полины', value:7}
         ]
     });
 

@@ -52,6 +52,12 @@ define(['managerAPI',
             buttonText: 'Continue'
         }],
 
+		results: [{
+			type: 'quest',
+			name: 'results',
+			scriptUrl: 'results.js'
+		}],
+
         intro: [{
             inherit: 'instructions',
             name: 'intro',

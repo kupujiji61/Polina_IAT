@@ -84,7 +84,8 @@ define(['questAPI'], function(Quest){
             {text:'Знакомые', value:4},
             {text:'Коллеги / одногруппники', value:5},
             {text:'Братья и сёстры по вере', value:6},
-			{text:'Кнопка для Полины', value:7}
+			{text:'Не знакомы', value:8},
+			{text:'Кнопка для Полины', value:9}
         ]
     });
 

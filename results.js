@@ -20,10 +20,11 @@ define(['questAPI'], function (Quest) {
 
         // ВАЖНО: это одна строка с EJS-шаблоном
         stem: [
-            // --- БЛОК JS: достаём глобальные данные и считаем числа ---
             '<% ',
-            '  var dNum = Number(dRaw);',                                          // пытаемся привести к числу
-            '  var fb   = r.feedback || "";',                                      // текст интерпретации
+            '  var r = (typeof global !== "undefined" && global.raceiat) ? global.raceiat : {};',
+            '  var dRaw = (r.d !== undefined && r.d !== null) ? r.d : "";',
+            '  var dNum = Number(dRaw);',
+            '  var fb = r.feedback || "Недостаточно попыток для выявления результатов.";',
             '%>',
 
             // --- НОРМАЛЬНОЕ ОБЪЯСНЕНИЕ ДЛЯ УЧАСТНИКА ---

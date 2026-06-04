@@ -22,27 +22,9 @@ define(['questAPI'], function (Quest) {
         stem: [
             // --- БЛОК JS: достаём глобальные данные и считаем числа ---
             '<% ',
-            '  var r    = (global && global.raceiat) ? global.raceiat : {};',      // весь объект
-            '  var dRaw = (typeof r.d !== "undefined") ? r.d : null;',             // то, что туда записали
             '  var dNum = Number(dRaw);',                                          // пытаемся привести к числу
             '  var fb   = r.feedback || "";',                                      // текст интерпретации
             '%>',
-
-            // --- ОТЛАДОЧНЫЙ БЛОК: СОДЕРЖИМОЕ GLOBAL.RACEIAT ---
-            '<h3>Техническая информация (для настройки)</h3>',
-            '<p><b>Содержимое <code>global.raceiat</code>:</b></p>',
-            '<pre><%= JSON.stringify(r, null, 2) %></pre>',
-
-            '<p><b>D-score (сырой, как сохранён в global.raceiat.d):</b> ',
-            '<code><%= (dRaw === null ? "null" : String(dRaw)) %></code></p>',
-
-            '<p><b>D-score (как число):</b> ',
-            '<code><%= (isNaN(dNum) ? "NaN (не число)" : dNum.toFixed(2)) %></code></p>',
-
-            '<p><b>Интерпретация (feedback):</b><br>',
-            '<%= fb || "Интерпретация отсутствует" %></p>',
-
-            '<hr>',
 
             // --- НОРМАЛЬНОЕ ОБЪЯСНЕНИЕ ДЛЯ УЧАСТНИКА ---
             '<p class="lead"><b>Что измеряет этот тест?</b></p>',
